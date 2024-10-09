@@ -3,6 +3,7 @@ package com.Backend_Traini8.Rahaman.util;
 import com.Backend_Traini8.Rahaman.config.Constants;
 import com.Backend_Traini8.Rahaman.domain.BaseEntity;
 import com.Backend_Traini8.Rahaman.dto.BaseEntityDto;
+import com.Backend_Traini8.Rahaman.dto.center.Address;
 import com.Backend_Traini8.Rahaman.exception.response.ResponseStatusDTO;
 import com.Backend_Traini8.Rahaman.repository.BaseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -163,6 +164,13 @@ public class CommonUtil {
             throw new Exception("ERR_ADMIN_0016") ;
         }
         return true ;
+    }
+
+    public boolean validateAddress(Address address)throws Exception{
+        if(address==null){
+            throw new Exception("ERR_ADMIN_0021");
+        }
+        return true;
     }
 
     private static String getErrorCodeMessageFromMANVException(MethodArgumentNotValidException exception){

@@ -24,6 +24,7 @@ public class TrainingController {
     @PostMapping
     public ResponseEntity<CustomPage<TrainingCenterDto>> createEntity(@Valid @RequestBody TrainingCenterDto requestDTO) throws Exception {
         commonUtil.validateBaseDto(requestDTO);
+        commonUtil.validateAddress(requestDTO.getAddress());
         return new ResponseEntity<>(new CustomPage<>(trainingCenterService.createEntity(requestDTO), Constants.BLANK_CONSTANT), HttpStatus.CREATED);
     }
 
