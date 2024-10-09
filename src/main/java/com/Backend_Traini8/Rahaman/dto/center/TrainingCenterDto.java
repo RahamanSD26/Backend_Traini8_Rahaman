@@ -21,6 +21,7 @@ public class TrainingCenterDto extends BaseEntityDto {
     @NotBlank(message="ERR_ADMIN_0001")
     @Pattern(regexp = Constants.REGEX_CENTER_NAME, message = "ERR_ADMIN_0002")
     private String centerName;
+    @NotBlank(message="ERR_ADMIN_0026")
     @Pattern(regexp = Constants.REGEX_CENTER_CODE, message = "ERR_ADMIN_0003")
     private String centerCode;
     @Valid
